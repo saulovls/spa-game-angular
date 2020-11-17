@@ -1,0 +1,26 @@
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 380px;
+  height: 380px;
+  font-size: 55px;
+}
+
+td {
+  border: 1px solid #673ab7;
+  width: 30%;
+  height: 30%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.example-card {
+  /* max-width: 400px; */
+  width: 50%;
+}
+
+.example-header-image {
+  background-image: url("https://image.freepik.com/vetores-gratis/jogo-da-velha-icone-de-contorno-linear-de-neon_7280-2421.jpg");
+  background-size: cover;
+}

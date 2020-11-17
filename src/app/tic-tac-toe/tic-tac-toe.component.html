@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="container">
+    <div class="card z-depth-5">
+      <div class="card-content center">
+        <mat-grid-list cols="1" rowHeight="6:5">
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title
+                  >É a vez do jogador: {{ currentPlayer }}</mat-card-title
+                >
+              </mat-card-header>
+              <mat-card-content>
+                <br />
+                <table class="table">
+                  <tr>
+                    <td (click)="addMove(0, 0)">{{ board[0][0] }}</td>
+                    <td (click)="addMove(0, 1)">{{ board[0][1] }}</td>
+                    <td (click)="addMove(0, 2)">{{ board[0][2] }}</td>
+                  </tr>
+                  <tr>
+                    <td (click)="addMove(1, 0)">{{ board[1][0] }}</td>
+                    <td (click)="addMove(1, 1)">{{ board[1][1] }}</td>
+                    <td (click)="addMove(1, 2)">{{ board[1][2] }}</td>
+                  </tr>
+                  <tr>
+                    <td (click)="addMove(2, 0)">{{ board[2][0] }}</td>
+                    <td (click)="addMove(2, 1)">{{ board[2][1] }}</td>
+                    <td (click)="addMove(2, 2)">{{ board[2][2] }}</td>
+                  </tr>
+                </table>
+                <br />
+                <mat-card-content>
+                  <p>Placar: X = {{ pointsX }} | O = {{ pointsO }}</p>
+                  <p>Vencedor rodada atual: {{ winner }}</p>
+                  <p>Vencedor da última rodada: {{ lastWinner }}</p>
+                </mat-card-content>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="resetBoard()">
+                  Iniciar novo jogo
+                </button>
+                <button
+                  mat-raised-button
+                  color="accent"
+                  (click)="resetCounts()"
+                >
+                  Zerar placar atual
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</div>

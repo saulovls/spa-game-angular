@@ -1,8 +1,8 @@
 #### ✨ Jogo da velha desenvolvido em:
 
-- Framework Angular 10;
+- Desenvolvido em Angular 10;
 
-- Estilos em CSS3 sem framework;
+- Estilos com Angular Material;
 
 - [Clica aqui pra ver uma demo! 😎](https://spa-game-angular.vercel.app/)
 

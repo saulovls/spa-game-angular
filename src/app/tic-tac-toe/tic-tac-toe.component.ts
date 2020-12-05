@@ -27,7 +27,7 @@ export class TicTacToeComponent {
     ['', '', ''],
   ];
 
-  addMove(line: number, col: number) {
+  addMove(line: number, col: number): void {
     switch (this.currentPlayer) {
       case this.playerX:
         if (this.board[line][col] == '' && this.winner == 'Nenhum') {
@@ -51,7 +51,7 @@ export class TicTacToeComponent {
           if (this.verifyWinner(this.currentPlayer) == true) {
             this.winner = this.currentPlayer;
             this.pointsO++;
-            this.getNotified(`O jogador ${this.winner} venceu!`, 'Fechar');
+            this.getNotified(`O jogador ${this.winner} venceu!`, 'fechar');
             break;
           }
           this.currentPlayer = this.playerX;
@@ -75,11 +75,11 @@ export class TicTacToeComponent {
     }
 
     // verificando se a coluna é completa
-    for (let i = 0; i < this.board.length; i++) {
+    for (let index = 0; index < this.board.length; index++) {
       if (
-        this.board[0][i] == player &&
-        this.board[1][i] == player &&
-        this.board[2][i] == player
+        this.board[0][index] == player &&
+        this.board[1][index] == player &&
+        this.board[2][index] == player
       ) {
         return true;
       }
@@ -98,13 +98,17 @@ export class TicTacToeComponent {
     }
   }
 
-  getNotified(message: string, action: string) {
+  getNotified(message: string, action: string): void {
     this._snackBar.open(message, action, {
       duration: 3000,
     });
+
+    setTimeout(() => {
+      this.resetBoard();
+    }, 3150);
   }
 
-  resetBoard() {
+  resetBoard(): void {
     this.currentPlayer = 'X';
     this.lastWinner = this.winner;
     this.winner = 'Nenhum';
@@ -115,7 +119,7 @@ export class TicTacToeComponent {
     ];
   }
 
-  resetCounts() {
+  resetCounts(): void {
     this.lastWinner = 'Nenhum';
     this.pointsX = 0;
     this.pointsO = 0;
